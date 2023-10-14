@@ -12,11 +12,11 @@ import Card from "@/components/ui/card";
 
 export default function Home() {
   return (
-    <main className="flex flex-col items-center justify-between p-24">
+    <main className="flex flex-col items-center justify-between">
       <Card title="My Card" href="https://example.com">
         Content goes here
       </Card>
-      <div className="w-1/2">
+      <div className="w-full">
       <Accordion
         title="I am an Accordion"
         defaultOpen={false} // Optional, determines if the accordion is initially open
