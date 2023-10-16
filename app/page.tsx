@@ -10,9 +10,34 @@ import {
   AlertDescription,
   AlertTitle,
 } from "@/components/ui/Alert/alert"
-
+import Code from "@/components/ui/Code/code";
 
 export default function Home() {
+
+
+  const codeSnippets = [
+    {
+        id: '1',
+        title: 'cURL',
+        language: 'bash',
+        value: `curl --request GET
+        --url https://mintlify.com/docs/api/demo
+        --header 'Authorization: Bearer <token>'`,
+    },
+    {
+        id: '2',
+        title: 'Python',
+        language: 'python',
+        value: `import requests
+        url = "https://mintlify.com/docs/api/demo"       
+        headers = {"Authorization": "Bearer <token>"}       
+        response = requests.request("GET", url, headers=headers)        
+        print(response.text)"`,
+    },
+    
+];
+
+  
   return (
     <main className="flex flex-col items-center justify-between">
       <div className="w-[90%]">
@@ -55,7 +80,7 @@ export default function Home() {
         </Button>
       </div>
 
-      <div>
+      <div className="mb-20">
       <Alert>
       <AlertTriangle className="h-4 w-4" />
       <AlertTitle>Heads up!</AlertTitle>
@@ -64,6 +89,8 @@ export default function Home() {
       </AlertDescription>
     </Alert>
       </div>
+
+      <Code items={codeSnippets} />
     </main>
   );
 }

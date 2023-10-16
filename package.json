@@ -18,14 +18,18 @@
     "lucide-react": "^0.286.0",
     "next": "13.5.4",
     "react": "^18",
+    "react-copy-to-clipboard": "^5.1.0",
     "react-dom": "^18",
+    "react-syntax-highlighter": "^15.5.0",
     "tailwind-merge": "^1.14.0",
     "tailwindcss-animate": "^1.0.7"
   },
   "devDependencies": {
     "@types/node": "^20",
     "@types/react": "^18",
+    "@types/react-copy-to-clipboard": "^5.0.5",
     "@types/react-dom": "^18",
+    "@types/react-syntax-highlighter": "^15.5.8",
     "autoprefixer": "^10",
     "eslint": "^8",
     "eslint-config-next": "13.5.4",
