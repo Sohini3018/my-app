@@ -11,6 +11,7 @@ import {
   AlertTitle,
 } from "@/components/ui/Alert/alert"
 import Code from "@/components/ui/Code/code";
+import Parameter from "@/components/ui/Parameter/Parameter";
 
 export default function Home() {
 
@@ -91,6 +92,10 @@ export default function Home() {
       </div>
 
       <Code items={codeSnippets} />
+
+      <div className="flex min-h-screen flex-col items-center justify-between p-24">
+      <Parameter/>
+      </div>
     </main>
   );
 }
