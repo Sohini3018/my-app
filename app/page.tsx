@@ -2,43 +2,48 @@
 import Accordion from "@/components/ui/Accordion/Accordion";
 
 import Card from "@/components/ui/Card/card";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/Tab/tabs";
+import {
+  Tabs,
+  TabsContent,
+  TabsList,
+  TabsTrigger,
+} from "@/components/ui/Tab/tabs";
 import { Button } from "@/components/ui/Button/button";
 import { ChevronRight, AlertTriangle } from "lucide-react";
 import {
   Alert,
   AlertDescription,
   AlertTitle,
-} from "@/components/ui/Alert/alert"
+} from "@/components/ui/Alert/alert";
 import Code from "@/components/ui/Code/code";
 import Parameter from "@/components/ui/Parameter/Parameter";
 
 export default function Home() {
-
-
   const codeSnippets = [
     {
-        id: '1',
-        title: 'cURL',
-        language: 'bash',
-        value: `curl --request GET
+      id: "1",
+      title: "cURL",
+      language: "bash",
+      value: `curl --request GET
         --url https://mintlify.com/docs/api/demo
         --header 'Authorization: Bearer <token>'`,
     },
     {
-        id: '2',
-        title: 'Python',
-        language: 'python',
-        value: `import requests
-        url = "https://mintlify.com/docs/api/demo"       
-        headers = {"Authorization": "Bearer <token>"}       
-        response = requests.request("GET", url, headers=headers)        
-        print(response.text)"`,
-    },
-    
-];
+      id: "2",
+      title: "Python",
+      language: "python",
+      value: `import requests
 
-  
+      url = "https://mintlify.com/docs/api/demo"
+      
+      headers = {"Authorization": "Bearer <token>"}
+      
+      response = requests.request("GET", url, headers=headers)
+      
+      print(response.text)`,
+    },
+  ];
+
   return (
     <main className="flex flex-col items-center justify-between">
       <div className="w-[90%]">
@@ -60,8 +65,9 @@ export default function Home() {
             want to group multiple Accordions into a single display.
           </p>
         </Accordion>
+        <div className="my-20">
 
-        <Tabs defaultValue="account" className="w-full">
+        <Tabs defaultValue="first-tab" className="w-full">
           <TabsList>
             <TabsTrigger value="first-tab">First Tab</TabsTrigger>
             <TabsTrigger value="sec-tab">Second Tab</TabsTrigger>
@@ -74,27 +80,29 @@ export default function Home() {
             ✌️ Here' content that's only inside the second Tab.
           </TabsContent>
         </Tabs>
-      </div>
-      <div>
-        <Button>
-          <ChevronRight className="mr-2 h-4 w-4" /> Login
-        </Button>
+        </div>
+        
+
+        <Code items={codeSnippets} />
+
       </div>
 
-      <div className="mb-20">
-      <Alert>
-      <AlertTriangle className="h-4 w-4" />
-      <AlertTitle>Heads up!</AlertTitle>
-      <AlertDescription>
-      If using a folder to store your api pages, you cannot use api for the name of the folder unless it is nested inside another folder. Folder names such as api-reference are accepted.
-      </AlertDescription>
-    </Alert>
+      <div className="m-20">
+        <Alert>
+          <AlertTriangle className="h-4 w-4" />
+          <AlertTitle>Heads up!</AlertTitle>
+          <AlertDescription>
+            If using a folder to store your api pages, you cannot use api for
+            the name of the folder unless it is nested inside another folder.
+            Folder names such as api-reference are accepted.
+          </AlertDescription>
+        </Alert>
       </div>
 
-      <Code items={codeSnippets} />
+      
 
       <div className="flex min-h-screen flex-col items-center justify-between p-24">
-      <Parameter/>
+        <Parameter />
       </div>
     </main>
   );
