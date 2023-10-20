@@ -1,5 +1,6 @@
 import React from 'react';
-import { Card, CardContent, CardFooter, CardTitle } from '../card';
+import { Card, CardContent, CardFooter, CardTitle } from '../components/ui/card';
+
 
 const parameterData = [
   // {
